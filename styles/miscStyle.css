@@ -1,0 +1,18 @@
+#headerTitulo {
+  background-color: grey;
+}
+
+#carta {
+  border-radius: 1rem;
+  background-color: lightgray;
+}
+
+#foto {
+  mask-image: linear-gradient(
+    black 85%,
+    transparent
+  );
+
+}
+
+
