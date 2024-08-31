@@ -24,7 +24,7 @@ while ($filas = mysqli_fetch_assoc($pedir)) {
   <div class="container">
       <h1 class="text-white">bienvenidos a nuestra tienda!!</h1>
       <p class="lead text-black">Las mejores marcas y productos en un solo lugar!!</p>
-      <a href="productos.php" class="btn btn-primary btn-lg">Comprar ahora</a>
+      <a href="productos.php" class="btn btn-primary btn-lg py-3">Comprar ahora</a>
   </div>
 </header>
 

@@ -35,9 +35,31 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.php">Log In</a>
-        </li>
+      
+
+        <?php
+
+if( isset($_SESSION['usuario']) && !empty($_SESSION['usuario'])) {
+echo '<li class="nav-item active">
+            <a class="nav-link" href="procesos/logout.php">Log Out </a>
+        </li>';
+        if ($_SESSION['usuario']['id_nivel'] == 1) {
+            echo '
+            <li class="nav-item active">
+                <a class="nav-link" href="crear.php">Crear</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="administracion.php">Administrar</a>
+            </li>
+            ';
+        }
+}  else {
+ echo '<li class="nav-item active">
+            <a class="nav-link" href="login.php">Log In </a>
+        </li>';
+       }
+    
+    ?>
       </ul>
     </div>
   </div>

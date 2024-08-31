@@ -9,12 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consultaExistencia = "SELECT 
     id_usuario, 
     mail,
+    clave,
      U.id_nivel, 
      N.nivel
 FROM usuarios U
 JOIN niveles N
 ON N.id_nivel = U.id_nivel
-WHERE U.mail = '.$email.' AND U.clave = '.$password.'
+WHERE U.mail = '".$email."' AND U.clave = '".$password."'
 LIMIT 1;
 ";
 
