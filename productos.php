@@ -119,6 +119,8 @@ $busqueda = strtolower($busqueda);
    
    };
 
+
+
    foreach ($productos as $producto) {
 
        echo '<div class="col-md-3">
