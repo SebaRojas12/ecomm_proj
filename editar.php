@@ -19,7 +19,7 @@ if (isset($_GET['id']) ) {
 
     $sql = mysqli_query($conexion , $peticion);
 
-    $publicaciones = [];
+    $productos = [];
 
     while  ($filas = mysqli_fetch_assoc($sql)) {
 
@@ -38,32 +38,37 @@ echo '<div class="container ">
               name="archivo" id="archivo" placeholder="" aria-describedby="fileHelpId">
         <div class="form-group d-flex flex-column">
             <label for="titulo">Precio</label>
-            <input type="text" class="form-control p-2" id="titulo" name="titulo" value="'.$producto['precio'].'">
+            <input type="text" class="form-control p-2" id="titulo" name="precio" value="'.$producto['precio'].'">
         </div>
          <div class="form-group d-flex flex-column">
             <label for="titulo">Stock</label>
-            <input type="text" class="form-control p-2" id="titulo" name="titulo" value="'.$producto['stock'].'">
+            <input type="text" class="form-control p-2" id="titulo" name="stock" value="'.$producto['stock'].'">
         </div>
         <div class="form-group d-flex flex-column">
             <label for="titulo">Nombre del prodcuto</label>
-            <input type="text" class="form-control p-2" id="titulo" name="titulo" value="'.$producto['nombre_producto'].'">
+            <input type="text" class="form-control p-2" id="titulo" name="nombre_producto" value="'.$producto['nombre_producto'].'">
         </div>
         <div class="form-group">
             <label for="descripcion">Descripción corta</label>
-            <textarea class="form-control" id="descripcion"  style="height: 100px ; width: 70%;" name="descripcion">'.$producto['descripcion_corta'].'</textarea>
+            <textarea class="form-control" id="descripcion"  style="height: 100px ; width: 70%;" name="descripcion_corta">'.$producto['descripcion_corta'].'</textarea>
         </div>
 
         <div class="form-group">
             <label for="descripcion">Descripción larga</label>
-            <textarea class="form-control" id="descripcion" style="height: 200px ; width: 70%;" name="descripcion">'.$producto['descripcion_larga'].'</textarea>
+            <textarea class="form-control" id="descripcion" style="height: 200px ; width: 70%;" name="descripcion_larga">'.$producto['descripcion_larga'].'</textarea>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Guardar Cambios</button>
+      
+         <button type="submit" name="guardar_cambios" class="btn btn-primary mt-3">Guardar Cambios</button>
+</form>
     </form>
 </div>
 
 
 
-<input type="hidden" name="id_usuario" value="'.$_SESSION['usuario']['id_usuario'].'">';
+<input type="hidden" name="id_producto" value="'.$_SESSION['usuario']['id_producto'].'">';
+
+    
+
         $_SESSION['actualizar'] = $productos;
         $_SESSION['iniciado'] = 'si';
    } 

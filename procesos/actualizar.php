@@ -24,6 +24,8 @@ if (isset($_POST['guardar_cambios'])) {
         WHERE 
             id_producto = '$id_producto'
     ";
+    
+    $actualizado = mysqli_query($conexion, $consulta);
 
     
         header('location: ../administracion.php');
